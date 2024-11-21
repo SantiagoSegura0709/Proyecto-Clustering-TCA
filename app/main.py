@@ -9,6 +9,10 @@ model = joblib.load("modelo.pkl")
 # Inicializar la API
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Bienvenido a mi API de FastAPI"}
+
 # Definir un esquema para la entrada
 class InputData(BaseModel):
     feature1: float
