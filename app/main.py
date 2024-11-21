@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 
 # Cargar el modelo
-model = joblib.load("modelo.pkl")
+model = joblib.load("app/modelo.pkl")
 
 # Inicializar la API
 app = FastAPI()
