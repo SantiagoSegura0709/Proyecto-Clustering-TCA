@@ -55,16 +55,26 @@
     <div class="container">
         <h1>Predicción de Usuario</h1>
         <form action="/predict" method="post">
-            <label for="feature1">Feature 1:</label>
-            <input type="number" id="feature1" name="feature1" step="any" required>
-            <label for="feature2">Feature 2:</label>
-            <input type="number" id="feature2" name="feature2" step="any" required>
-            <label for="feature3">Feature 3:</label>
-            <input type="number" id="feature3" name="feature3" step="any" required>
-            <label for="feature4">Feature 4:</label>
-            <input type="number" id="feature4" name="feature4" step="any" required>
-            <label for="feature5">Feature 5:</label>
-            <input type="number" id="feature5" name="feature5" step="any" required>
+            <label for="id_estatus_reservaciones">ID Estatus Reservaciones:</label>
+            <input type="number" id="id_estatus_reservaciones" name="id_estatus_reservaciones" step="any" required>
+            <label for="days_to_arrival">Days to Arrival:</label>
+            <input type="number" id="days_to_arrival" name="days_to_arrival" step="any" required>
+            <label for="late_booking">Late Booking:</label>
+            <input type="number" id="late_booking" name="late_booking" step="any" required>
+            <label for="reservation_day_of_week">Reservation Day of Week:</label>
+            <input type="number" id="reservation_day_of_week" name="reservation_day_of_week" step="any" required>
+            <label for="id_paquete">ID Paquete:</label>
+            <input type="number" id="id_paquete" name="id_paquete" step="any" required>
+            <label for="ID_Segmento_Comp">ID Segmento Comp:</label>
+            <input type="number" id="ID_Segmento_Comp" name="ID_Segmento_Comp" step="any" required>
+            <label for="week_of_year">Week of Year:</label>
+            <input type="number" id="week_of_year" name="week_of_year" step="any" required>
+            <label for="h_tfa_total">H TFA Total:</label>
+            <input type="number" id="h_tfa_total" name="h_tfa_total" step="any" required>
+            <label for="month">Month:</label>
+            <input type="number" id="month" name="month" step="any" required>
+            <label for="h_num_noc">H Num Noc:</label>
+            <input type="number" id="h_num_noc" name="h_num_noc" step="any" required>
             <button type="submit">Predecir</button>
         </form>
         {% if result %}
