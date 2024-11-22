@@ -18,22 +18,42 @@ def read_root(request: Request):
 
 # Definir un esquema para la entrada
 class InputData(BaseModel):
-    feature1: float
-    feature2: float
-    feature3: float
-    feature4: float
-    feature5: float
+    id_estatus_reservaciones: float
+    days_to_arrival: float
+    late_booking: float
+    reservation_day_of_week: float
+    id_paquete: float
+    ID_Segmento_Comp: float
+    week_of_year: float
+    h_tfa_total: float
+    month: float
+    h_num_noc: float
 
 # Definir la ruta principal para predicciones
 @app.post("/predict", response_class=HTMLResponse)
-async def predict(request: Request, feature1: float = Form(...), feature2: float = Form(...), feature3: float = Form(...), feature4: float = Form(...), feature5: float = Form(...)):
+async def predict(request: Request, 
+                  id_estatus_reservaciones: float = Form(...), 
+                  days_to_arrival: float = Form(...), 
+                  late_booking: float = Form(...), 
+                  reservation_day_of_week: float = Form(...), 
+                  id_paquete: float = Form(...), 
+                  ID_Segmento_Comp: float = Form(...), 
+                  week_of_year: float = Form(...), 
+                  h_tfa_total: float = Form(...), 
+                  month: float = Form(...), 
+                  h_num_noc: float = Form(...)):
     # Convertir los datos a un DataFrame
     input_df = pd.DataFrame([{
-        "feature1": feature1,
-        "feature2": feature2,
-        "feature3": feature3,
-        "feature4": feature4,
-        "feature5": feature5
+        "id_estatus_reservaciones": id_estatus_reservaciones,
+        "days_to_arrival": days_to_arrival,
+        "late_booking": late_booking,
+        "reservation_day_of_week": reservation_day_of_week,
+        "id_paquete": id_paquete,
+        "ID_Segmento_Comp": ID_Segmento_Comp,
+        "week_of_year": week_of_year,
+        "h_tfa_total": h_tfa_total,
+        "month": month,
+        "h_num_noc": h_num_noc
     }])
     
     # Realizar predicción
@@ -47,3 +67,4 @@ async def predict(request: Request, feature1: float = Form(...), feature2: float
         "result": result,
         "probability": prob
     })
+
